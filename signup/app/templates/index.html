@@ -1,0 +1,60 @@
+<!-- {% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'indexstyle.css' %}"/>
+</head>
+<body>
+<h1>Registration form</h1>
+<form>
+    Name :- <input type="text" name="name"/><br>
+    Email :- <input type="email" name="email"/><br>
+    Contact Number :- <input type="number" name="number"/><br>
+    Date Of Birth :- <input type="date" name="DOB" /><br>
+    Password :- <input type="password" name="password"/><br>
+
+</form>
+<button><a href="login">Login</a></button>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'indexstyle.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="signup-box">
+      <h1>Sign-up</h1>
+      <form method="post" action="/ragistration/">
+        {% csrf_token %}
+        <label><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" required/>
+        <label><b>Email</b></label>
+        <input type="email" placeholder="Enter email id" name="email" required />
+        <label><b>Contact number</b></label>
+        <input type="number" placeholder="Enter your Number"name='contact' required/>
+        <label><b>Date of Birth</b></label>
+        <input type="date" placeholder="Enter DOB" name="DOB" required/>
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Entre Password" name="password" required/><br><br>
+        <input type="submit" value="Submit"  />
+    </form>
+      <p>
+        By clicking the Sign Up button,you agree to our <br />
+        <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+      </p>
+    </div>
+    <p class="para-2">
+      Already have an account? <a href="login.html">Login here</a>
+    </p>
+  </body>
+</html>
